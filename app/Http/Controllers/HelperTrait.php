@@ -205,13 +205,14 @@ trait HelperTrait
         return str_replace('_',' ',str_slug($string));
     }
 
-    public function sendMessage($destination, $template, array $fields, $copyTo=null, $pathToFile=null)
+    public function sendMessage($template, array $fields, $pathToFile=null, $copyTo=null)
     {
-        $title = (string)Settings::getSeoTags()['title'];
-        Mail::send($template, $fields, function($message) use ($title, $pathToFile, $destination, $copyTo) {
-            $message->subject(trans('auth.message_from').$title);
-            $message->from(Config::get('app.master_mail'), $title);
-            $message->to($destination);
+        $title = Settings::getSeoTags()['title'];
+        $fields['title'] = $title;
+        Mail::send('emails.'.$template, $fields, function($message) use ($title, $pathToFile, $copyTo) {
+            $message->subject(trans('auth.message_from',['from' => $title]));
+            $message->from(env('MAIL_FROM_ADDRESS'));
+            $message->to((string)Settings::getSettings()->master_email);
             if ($copyTo) $message->cc($copyTo);
             if ($pathToFile) $message->attach($pathToFile);
         });

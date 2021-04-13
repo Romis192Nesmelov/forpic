@@ -12,41 +12,24 @@ class StaticController extends Controller
 
     public function index(Request $request)
     {
-        var_dump(Settings::getSeoTags());
-//        return $this->showView($request, 'home', $token);
+        return $this->showView('home');
     }
 
-    protected function showView(Request $request, $view)
+    protected function showView($view)
     {
-//        $this->data['seo'] = Settings::getSeoTags();
-//        $blindVer = $request->has('blind') && $request->input('blind');
-//
-//        $mainMenu = [
-//            ['data_scroll' => 'news', 'name' => trans('menu.news')],
-//            ['data_scroll' => 'events', 'name' => trans('menu.events')],
-//            ['data_scroll' => 'map', 'name' => trans('menu.map')],
-//            ['data_scroll' => 'trainers', 'name' => trans('menu.trainers')]
-//        ];
-//        
-//        $areas = $this->getActiveAreas();
-//        $sports = KindOfSport::where('active',1)->get();
-//        $socnets = [
-//            ['icon' => 'yt', 'href' => '#'],
-//            ['icon' => 'fb', 'href' => '#'],
-//            ['icon' => 'inst', 'href' => '#'],
-//            ['icon' => 'ok', 'href' => '#'],
-//            ['icon' => 'vk', 'href' => '#']
-//        ]; 
-//
-//        return view($view, [
-//            'blindVer' => $blindVer,
-//            'mainMenu' => $mainMenu,
-//            'areas' => $areas,
-//            'sports' => $sports,
-//            'socnets' => $socnets,
-//            'data' => $this->data,
-//            'metas' => $this->metas,
-//            'token' => $token
-//        ]);
+        $mainMenu = [
+            ['data_scroll' => 'calculator', 'name' => trans('menu.calculator')],
+            ['data_scroll' => 'about_us', 'name' => trans('menu.about_us')],
+            ['data_scroll' => 'documents', 'name' => trans('menu.documents')],
+            ['data_scroll' => 'price', 'name' => trans('menu.price')],
+            ['data_scroll' => 'actions', 'name' => trans('menu.actions')],
+            ['data_scroll' => 'contacts', 'name' => trans('menu.contacts')]
+        ];
+
+        return view($view, [
+            'mainMenu' => $mainMenu,
+            'seo' => Settings::getSeoTags(),
+            'metas' => $this->metas
+        ]);
     }
 }

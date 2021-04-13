@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
-
+use App\Http\Controllers\FeedbackController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +15,4 @@ use App\Http\Controllers\StaticController;
 */
 
 Route::get('/', [StaticController::class,'index']);
+Route::post('/callback', [FeedbackController::class,'callback']);

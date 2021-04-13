@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 //use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Settings;
+//use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\App;
 
 class HelperController extends Controller
 {
     use HelperTrait;
+    
+    public function hrefTel()
+    {
+        return str_replace([' ','(',')','-'],'',Settings::getSettings()->master_phone);
+    }
     
     public function randHash()
     {

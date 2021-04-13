@@ -1,0 +1,1 @@
+<a href="tel:{{ Helper::hrefTel() }}">{{ Settings::getSettings()->master_phone }}</a>

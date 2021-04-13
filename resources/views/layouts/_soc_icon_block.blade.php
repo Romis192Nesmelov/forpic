@@ -1,0 +1,1 @@
+<a href="{{ $href }}" target="_blank"><div class="soc-net"><i class="{{ $icon }}"></i></div></a>

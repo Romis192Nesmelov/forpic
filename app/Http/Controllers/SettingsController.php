@@ -17,6 +17,7 @@ class SettingsController extends Controller
     public function getSeoTags()
     {
         $tags = [];
+        $tags['title'] = (string)$this->settings->seo->title;
         foreach ($this->metas as $meta => $params) {
             $tags[$meta] = (string)$this->settings->seo->$meta;
         }
