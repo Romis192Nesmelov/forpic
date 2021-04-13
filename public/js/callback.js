@@ -64,7 +64,6 @@ $(document).ready(function ($) {
                         'email':'«E-mail»',
                         'user_name':'«Имя»'
                     };
-
                 $.each(responseMsg.errors, function (field, error) {
                     var errorMsg = error[0],
                         errorBlock = $('.input-'+field).parents('.form-group.has-feedback'),

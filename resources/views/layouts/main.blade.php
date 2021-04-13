@@ -30,7 +30,7 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
 
     <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-    {{--<script src="https://www.google.com/recaptcha/api.js?hl={{ App::getLocale() }}"></script>--}}
+    <script src="https://www.google.com/recaptcha/api.js?hl={{ App::getLocale() }}"></script>
     <!-- Core JS files -->
     <script type="text/javascript" src="{{ asset('js/core/libraries/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/core/libraries/bootstrap.min.js') }}"></script>

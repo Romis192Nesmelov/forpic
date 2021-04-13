@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
 {
-    use HelperTrait;
+    use HelperTrait, GoogleCaptchaTrait;
 
     public function callback(Request $request)
     {
@@ -13,6 +13,7 @@ class FeedbackController extends Controller
             'user_name' => 'max:50',
             'phone' => 'required|'.$this->validationPhone,
             'question' => 'max:1000',
+            'g-recaptcha-response' => 'required|string',
             'i_agree' => 'required|accepted',
         ]);
 //        $matches = false;
@@ -24,12 +25,16 @@ class FeedbackController extends Controller
 //                break;
 //            }
 //        }
+        if (!$this->reCapchaRequest($request->input('g-recaptcha-response'))) return response()->json(['error' => trans('validation.captcha-error')], 404);
 
         $fields = $this->processingFields($request, null, 'i_agree');
 //        if (!$matches && $fields['message']) {
 //            Claim::create($fields);
-            $this->sendMessage('callback', $fields);
+        $this->sendMessage('callback', $fields);
 //        }
         return response()->json(['success' => true, 'message' => trans('content.thanx_message')]);
+
+
+
     }
 }

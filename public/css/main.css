@@ -36,8 +36,8 @@ textarea {
 }
 
 .section {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .section.gray {
@@ -50,6 +50,10 @@ textarea {
     text-align: center;
     position: relative;
     margin-bottom: 30px;
+}
+
+.section i {
+    color: #0287a5;
 }
 
 /*.page-container {*/
@@ -91,6 +95,11 @@ textarea {
     float: left;
     background-color: #0287a5;
     border: none;
+}
+
+.g-recaptcha {
+    display: table;
+    margin: auto;
 }
 
 .i_agree {
@@ -356,6 +365,22 @@ textarea {
 
 #callback-button:hover {
     opacity: 1;
+}
+
+#map {
+    width: 100%;
+    border-top: 2px solid #0287a5;
+    border-bottom: 2px solid #0287a5;
+}
+
+.map-point {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #0287a5;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background: url("../images/logo_small.svg") center center no-repeat white;
+    background-size: 60%;
 }
 
 @media (max-width: 1024px) {
