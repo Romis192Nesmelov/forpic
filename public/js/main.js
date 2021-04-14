@@ -5,32 +5,41 @@ $(document).ready(function() {
     //     unifiedHeight();
     // });
 
-    // $('.styled').uniform();
     $('a.img-preview').fancybox({padding: 3});
-    
+    new PerfectScrollbar('html');
+
+    halfHeight();
+    $(window).resize(function() {
+        halfHeight();
+    });
+
     // Owlcarousel
-    // $('.owl-carousel.sports').owlCarousel({
-    //     margin: 10,
-    //     loop: true,
-    //     nav: true,
-    //     autoplay: true,
-    //     dots: true,
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         729: {
-    //             items: 3
-    //         },
-    //         1200: {
-    //             items: 4
-    //         }
-    //     },
-    //     navText:[navButtonBlack1,navButtonBlack2]
-    // });
+    var navButtonBlack1 = '<img src="/images/arrow_left_black.svg" />',
+        navButtonBlack2 = '<img src="/images/arrow_right_black.svg" />';
+        // navButtonWhite1 = '<img src="/images/arrow_left_white.svg" />',
+        // navButtonWhite2 = '<img src="/images/arrow_right_white.svg" />';
+    $('.owl-carousel.documents').owlCarousel({
+        margin: 10,
+        loop: true,
+        nav: true,
+        autoplay: true,
+        dots: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            729: {
+                items: 3
+            },
+            1200: {
+                items: 4
+            }
+        },
+        navText:[navButtonBlack1,navButtonBlack2]
+    });
 
     // Scroll menu
-    $('a[data-scroll]').click(function (e) {
+    $('a[data-scroll], div[data-scroll]').click(function (e) {
         e.preventDefault();
         window.menuClickFlag = true;
         goToScroll($(this).attr('data-scroll'));
@@ -53,6 +62,24 @@ $(document).ready(function() {
         }
         if ($(window).scrollTop() > $(window).height()) onTopButton.fadeIn();
         else onTopButton.fadeOut();
+    });
+
+    // Calculator
+    var checkBoxes = $('.calculator input'),
+        calculatorTotal = $('#calculator-value');
+    checkBoxes.change(function () {
+        var totalValue = 0;
+        checkBoxes.each(function () {
+            if ($(this).is(':checked')) {
+                totalValue += parseInt($(this).attr('name'));
+            }
+        });
+        calculatorTotal.html(tolocalstring(totalValue));
+    });
+
+    $('.calculator button').click(function () {
+        checkBoxes.prop('checked',false).uniform('refresh');
+        calculatorTotal.html(tolocalstring(0));
     });
 });
 
@@ -81,4 +108,15 @@ function goToScroll(scrollData) {
 
 function resetColorHrefsMenu() {
     $('.main-menu > a.active').removeClass('active').blur();
+}
+
+function halfHeight() {
+    var obj = $('.half-height'),
+        windowHeight = $(window).height();
+    if (windowHeight < 800) obj.css('height',windowHeight);
+    else obj.css('height',windowHeight/1.8);
+}
+
+function tolocalstring(string) {
+    return string.toLocaleString().replace(/\,/g, ' ')+' ₽';
 }

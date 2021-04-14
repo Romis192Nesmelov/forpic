@@ -27,6 +27,7 @@
     <link href="{{ asset('css/loader.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/perfect-scrollbar.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
 
     <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
@@ -73,6 +74,7 @@
     <script type="text/javascript" src="{{ asset('js/preview_image.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/max_height.js') }}"></script>
 
+    <script type="text/javascript" src="{{ asset('js/perfect-scrollbar.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/yamap.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/masks.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/callback.js') }}"></script>
@@ -103,7 +105,6 @@
     </div>
     <div class="beard"></div>
 </nav>
-
 
 <!-- Page container -->
 <div class="page-container">
@@ -142,7 +143,7 @@
 </div>
 <!-- /footer -->
 
-<div id="on-top-button"><i class="icon-arrow-up12"></i></div>
+<div id="on-top-button" data-scroll="home"><i class="icon-arrow-up12"></i></div>
 <a id="callback-button" data-toggle="modal" data-target="#callback-modal"><i class="icon-phone-wave"></i></a>
 
 </body>

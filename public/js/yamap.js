@@ -1,9 +1,5 @@
 $(document).ready(function ($) {
     ymaps.ready(init);
-    mapHeight();
-    $(window).resize(function() {
-        mapHeight();
-    });
 });
 
 function init() {
@@ -42,11 +38,4 @@ function addingPoints(myMap, coordinates, icon) {
         }
     );
     myMap.geoObjects.add(place);
-}
-
-function mapHeight() {
-    var map = $('#map'),
-        windowHeight = $(window).height();
-    if (windowHeight < 800) map.css('height',windowHeight);
-    else map.css('height',windowHeight/1.5);
 }

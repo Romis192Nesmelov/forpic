@@ -6,6 +6,19 @@ body {
 
 h1, h2, h3, h4 {
     line-height: 1.1em;
+    text-align: center;
+    padding: 0 10px;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #0287a5;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 div.table {
@@ -36,12 +49,30 @@ textarea {
 }
 
 .section {
+    width: 100%;
+    display: table;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: white;
+    border-bottom: 2px solid #0287a5;
+}
+
+.section .form-group {
+    width: 300px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.section .form-group input {
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #0287a5;
 }
 
 .section.gray {
-    background-color: #dbe2ea;
+    background: url("../images/light-grey-bg.jpg") repeat fixed;
 }
 
 .section .header {
@@ -56,13 +87,44 @@ textarea {
     color: #0287a5;
 }
 
+.section.about {
+    height: 600px;
+    background: url("../images/landrover.jpg") no-repeat;
+    background-size: cover;
+}
+
+/*.section.about h1,*/
+/*.section.about p {*/
+    /*color: white;*/
+/*}*/
+
+.section.about h1 {
+    text-align: left;
+}
+
 /*.page-container {*/
     /*padding: 20px 0 0 0;*/
 /*}*/
 
+.image {
+    text-align: center;
+    border: 1px solid #004150;
+}
+
 .image > img,
 .image > a > img {
     width: 100%;
+}
+
+.document {
+    text-align: center;
+    font-size: 13px;
+    color: #004150;
+}
+
+.document .image {
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 .modal-header .close {
@@ -76,8 +138,8 @@ textarea {
 
 .btn-primary {
     width: 160px;
-    background-color: #0287a5;
-    border-color: #0287a5;
+    background-color: #0287a5 !important;
+    border-color: #0287a5 !important;
 }
 
 .btn-primary:hover,
@@ -109,9 +171,23 @@ textarea {
     margin: auto;
 }
 
-.checkbox-container {
+.section .i_agree {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#callback-modal .checkbox-container {
     width: 100%;
     text-align: center;
+}
+
+.calculator .checkbox-container {
+    margin-bottom: 5px;
+}
+
+.calculator button {
+    width: 170px;
+    margin-bottom: 20px;
 }
 
 .checkbox-inline {
@@ -140,6 +216,10 @@ textarea {
     float: left;
     margin-left: 0 !important;
     padding: 15px !important;
+}
+
+.navbar-brand img {
+    width: 100%;
 }
 
 .navbar {
@@ -189,6 +269,18 @@ textarea {
     padding-left: 30px;
 }
 
+.star {
+    color: gray;
+}
+
+.text-gray {
+    color: grey;
+}
+
+.text-blue {
+    color: #0287a5;
+}
+
 .has-feedback {
     position: static;
 }
@@ -213,16 +305,41 @@ textarea {
     padding-left: 35px;
 }
 
-/*.owl-carousel {*/
-    /*width: calc(100% - 125px);*/
-    /*margin: auto;*/
-/*}*/
+.half-height {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video-container {
+    padding: 0 !important;
+}
+
+video  {
+    width: 100%;
+}
+
+@supports (object-fit: cover)
+{
+    #video-container > video {
+        top: 0;
+        left: 0;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.owl-carousel {
+    width: calc(100% + 2px);
+    margin: auto;
+}
 
 .owl-nav button {
-    height: 120px;
+    height: 30px;
     position: absolute;
     top: 50%;
-    transform: translateY(-70%);
+    transform: translateY(-200%);
 }
 
 .owl-nav button img {
@@ -234,11 +351,11 @@ textarea {
 }
 
 .owl-nav button.owl-prev {
-    left: -62px;
+    left: -30px;
 }
 
 .owl-nav button.owl-next {
-    right: -62px;
+    right: -30px;
 }
 
 .owl-dots {
@@ -256,7 +373,24 @@ textarea {
 
 .owl-dots button:hover,
 .owl-dots button.active {
-    background-color: #ff7070 !important
+    background-color: #0287a5 !important
+}
+
+table.price {
+    width: 100%;
+}
+
+table.price tr {
+    border-bottom: 1px dotted grey;
+}
+
+table.price td {
+    padding: 10px 0;
+}
+
+table.price td.value {
+    text-align: right;
+    color: #0287a5;
 }
 
 .footer {
@@ -322,9 +456,7 @@ textarea {
 #on-top-button {
     width: 48px;
     height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     color: #0287a5;
     background-color: white;
     border-radius: 50%;
@@ -335,10 +467,11 @@ textarea {
     z-index: 999;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    opacity: 0;
+    display: none;
 }
 
 #on-top-button i {
+    margin-top: 15px;
     font-size: 20px;
 }
 
@@ -369,7 +502,6 @@ textarea {
 
 #map {
     width: 100%;
-    border-top: 2px solid #0287a5;
     border-bottom: 2px solid #0287a5;
 }
 
@@ -412,5 +544,11 @@ textarea {
 
     .footer .nav > li {
         text-align: center;
+    }
+}
+
+@media (max-width: 300px) {
+    .section .form-group {
+        width: 95%;
     }
 }
