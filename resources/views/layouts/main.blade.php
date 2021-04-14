@@ -84,6 +84,7 @@
 
 @include('layouts._message_modal_block')
 @include('layouts._callback_modal_block')
+@include('layouts._action_modal_block')
 
 <nav class="navbar navbar-default">
     <div class="navbar-header">

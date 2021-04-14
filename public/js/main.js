@@ -38,6 +38,26 @@ $(document).ready(function() {
         navText:[navButtonBlack1,navButtonBlack2]
     });
 
+    $('.owl-carousel.actions').owlCarousel({
+        margin: 10,
+        loop: true,
+        nav: true,
+        autoplay: true,
+        dots: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            729: {
+                items: 2
+            },
+            1200: {
+                items: 3
+            }
+        },
+        navText:[navButtonBlack1,navButtonBlack2]
+    });
+
     // Scroll menu
     $('a[data-scroll], div[data-scroll]').click(function (e) {
         e.preventDefault();
@@ -81,6 +101,19 @@ $(document).ready(function() {
         checkBoxes.prop('checked',false).uniform('refresh');
         calculatorTotal.html(tolocalstring(0));
     });
+
+    // Click to action
+    $('.owl-carousel.actions .action').click(function () {
+        var actionModal = $('#action-modal'),
+            image = $(this).find('img').attr('src'),
+            title = $(this).find('.title').html(),
+            description = $(this).find('.description').html();
+
+        actionModal.find('h2').html(title);
+        actionModal.find('img').attr('src',image);
+        actionModal.find('p').html(description);
+        actionModal.modal('show');
+    });
 });
 
 // function unifiedHeight() {
@@ -114,7 +147,7 @@ function halfHeight() {
     var obj = $('.half-height'),
         windowHeight = $(window).height();
     if (windowHeight < 800) obj.css('height',windowHeight);
-    else obj.css('height',windowHeight/1.8);
+    else obj.css('height',windowHeight/1.6);
 }
 
 function tolocalstring(string) {

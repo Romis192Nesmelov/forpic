@@ -116,7 +116,13 @@
         <div class="container">
             <h1>{{ trans('menu.actions') }}</h1>
             <div class="owl-carousel actions">
-
+                @foreach($data['actions'] as $action)
+                    <div class="action">
+                        <img src="{{ asset($action->image) }}" />
+                        <div class="title">{{ $action->name }}</div>
+                        <div class="description">{{ $action->description }}</div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -124,6 +130,7 @@
     <a name="contacts"></a>
     <div class="section" data-scroll-destination="contacts">
         <div class="container">
+            <h1>{{ trans('menu.contacts') }}</h1>
             <h3 class="text-center"><i class="icon-location4"></i> {{ Settings::getSettings()->address }}</h3>
             <h4 class="text-center"><i class="icon-phone-wave"></i> @include('layouts._phone_block')</h4>
             <h4 class="text-center"><i class=" icon-watch2"></i> {{ trans('content.time_work', ['time' => Settings::getSettings()->time_work]) }}</h4>
