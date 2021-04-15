@@ -7,7 +7,7 @@
             <source src="{{ asset('video/intro1.mov') }}" type="video/quicktime">
             <source src="{{ asset('video/intro1.wmv') }}" type="video/wmv">
             <source src="{{ asset('video/intro1.m4v') }}" type="video/m4v">
-            <source src="{{ asset('video/intro1.mpeg') }}" type="video/mpeg>
+            <source src="{{ asset('video/intro1.mpeg') }}" type="video/mpeg">
         </video>
     </div>
 
