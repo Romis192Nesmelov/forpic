@@ -3,12 +3,11 @@
 @section('content')
     <div id="video-container" class="section half-height" data-scroll-destination="home">
         <video autoplay="autoplay" preload="auto" muted="muted" loop="loop" poster="{{ asset('images/poster.jpg') }}">
-            <source src="{{ asset('video/intro1.mp4') }}">
-            <source src="{{ asset('video/intro1.mov') }}">
-            <source src="{{ asset('video/intro1.wmv') }}">
-            <source src="{{ asset('video/intro1.m4v') }}">
-            <source src="{{ asset('video/intro1.mkv') }}">
-            <source src="{{ asset('video/intro1.mpeg') }}">
+            <source src="{{ asset('video/intro1.mp4') }}" type="video/mp4">
+            <source src="{{ asset('video/intro1.mov') }}" type="video/quicktime">
+            <source src="{{ asset('video/intro1.wmv') }}" type="video/wmv">
+            <source src="{{ asset('video/intro1.m4v') }}" type="video/m4v">
+            <source src="{{ asset('video/intro1.mpeg') }}" type="video/mpeg>
         </video>
     </div>
 
