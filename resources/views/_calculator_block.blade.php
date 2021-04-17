@@ -1,12 +1,12 @@
 <div class="col-md-4 col-sm-12 col-xs-12">
     <div class="panel panel-flat">
         <div class="panel-body">
-            @foreach($items as $name => $value)
+            @for($i=$start;$i<$start+6;$i++)
                 @include('_checkbox_block',[
-                    'name' => $value,
-                    'label' => trans('content.'.$name)
+                    'name' => $items[$i]->value,
+                    'label' => trans('content.'.$items[$i]->name)
                 ])
-            @endforeach
+            @endfor
         </div>
     </div>
 </div>

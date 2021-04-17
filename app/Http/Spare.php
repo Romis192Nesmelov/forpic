@@ -3,9 +3,9 @@
 namespace App;
 use Illuminate\Database\Eloquent\Model;
 
-class Price extends Model
+class Spare extends Model
 {
-    protected $fillable = ['name','value','brand_id'];
+    protected $fillable = ['name','code','value','brand_id'];
 
     public function brand()
     {

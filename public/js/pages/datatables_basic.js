@@ -20,7 +20,7 @@ $(function() {
         columnDefs: [{ 
             orderable: false,
             width: '100px',
-            targets: [ window.dtColumns ? window.dtColumns : 5 ]
+            targets: [ window.dtColumns ? window.dtColumns : 3 ]
         }],
         dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
         language: {

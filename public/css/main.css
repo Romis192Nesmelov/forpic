@@ -213,6 +213,15 @@ textarea {
     margin-left: 5px;
 }
 
+.long-button {
+    width: 350px;
+    margin-bottom: 15px;
+}
+
+.navbar.navbar-default {
+    width: 100%;
+}
+
 .navbar-brand {
     width: 200px;
     height: auto;
@@ -256,8 +265,7 @@ textarea {
 }
 
 .nav > li > a {
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding: 2px 12px !important;
 }
 
 .nav > li:hover > a,
@@ -379,20 +387,21 @@ video  {
     background-color: #0287a5 !important
 }
 
-table.price {
+img.brand-logo {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.brand-logo img {
     width: 100%;
 }
 
-table.price tr {
-    border-bottom: 1px dotted grey;
+.table-items .price {
+    width: 15%;
+    font-size: 16px;
 }
 
-table.price td {
-    padding: 10px 0;
-}
-
-table.price td.value {
-    text-align: right;
+.table-items td.price {
     color: #0287a5;
 }
 
@@ -406,6 +415,20 @@ table.price td.value {
 
 .modal-body .action {
     cursor: auto;
+}
+
+.nav-tabs.nav-tabs-highlight > li.active > a,
+.nav-tabs.nav-tabs-highlight > li.active > a:hover,
+.nav-tabs.nav-tabs-highlight > li.active > a:focus {
+    border-top: 3px solid #0287a5;
+}
+
+.nav-tabs > li {
+    font-size: 17px;
+}
+
+.nav-tabs > li > a {
+    padding-top: 10px !important;
 }
 
 .action img {
@@ -425,7 +448,7 @@ table.price td.value {
 
 .footer {
     width: 100%;
-    padding: 10px 0;
+    padding: 20px 0;
     background-color: #dbe2ea;
     position: relative;
     left: auto;
@@ -448,9 +471,9 @@ table.price td.value {
 }
 
 .footer .logos img {
-    width: 100px;
-    display: block;
-    margin: 7px auto;
+    width: 80px;
+    display: inline-block;
+    margin: 5px auto;
 }
 
 .sub-footer {
@@ -574,6 +597,13 @@ table.price td.value {
 
     .footer .nav > li {
         text-align: center;
+    }
+}
+
+@media (max-width: 350px) {
+    .long-button {
+        width: 100%;
+        font-size: 10px;
     }
 }
 

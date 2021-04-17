@@ -5,6 +5,23 @@ $(document).ready(function() {
     //     unifiedHeight();
     // });
 
+    // Drop down menu
+    $('li.dropdown').bind('mouseover',function () {
+        var dropDownMenu = $(this).find('ul.dropdown-menu');
+        dropDownMenu.show();
+        dropDownMenu.bind('mouseleave',function () {
+            dropDownMenu.hide();
+        })
+    });
+
+    // Click prices on sub-menu
+    $('.dropdown-menu a').click(function (e) {
+        var dataScroll = $(this).attr('data-scroll');
+        if (dataScroll == 'works' || dataScroll == 'spares') {
+            $('a[href=#'+dataScroll+'-price]').click();
+        }
+    });
+
     $('a.img-preview').fancybox({padding: 3});
     new PerfectScrollbar('html');
 
@@ -66,8 +83,13 @@ $(document).ready(function() {
     });
 
     // Scroll controls
-    var onTopButton = $('#on-top-button');
+    var onTopButton = $('#on-top-button'),
+        mainMenuPos = 0,
+        mainMenu = $('.navbar.navbar-default');
+
     $(window).scroll(function() {
+        var windowScroll = $(window).scrollTop();
+
         if (!window.menuClickFlag) {
             var win = $(this);
             $('.section').each(function () {
@@ -80,7 +102,23 @@ $(document).ready(function() {
                 }
             });
         }
-        if ($(window).scrollTop() > $(window).height()) onTopButton.fadeIn();
+
+        if (windowScroll > 95 && !mainMenuPos) {
+            mainMenu.css({
+                'position':'fixed',
+                'top':-1*mainMenu.height(),
+                'z-index':999
+            });
+            mainMenuPos = 1;
+            mainMenu.animate({'top':0});
+        } else if (windowScroll < mainMenu.height() + 20 && mainMenuPos) {
+            mainMenu.css({
+                'position':'relative'
+            });
+            mainMenuPos = 0;
+        }
+
+        if (windowScroll > $(window).height()) onTopButton.fadeIn();
         else onTopButton.fadeOut();
     });
 

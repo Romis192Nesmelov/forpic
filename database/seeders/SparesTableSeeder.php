@@ -2,18 +2,19 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Price;
+use App\Spare;
 
-class PricesTableSeeder extends Seeder
+class SparesTableSeeder extends Seeder
 {
 
     public function run()
     {
         for ($b=1;$b<=2;$b++) {
             for ($i=0;$i<50;$i++) {
-                Price::create([
-                    'name' => 'Цена на что-то №'.($i+1),
-                    'value' => rand(1000,50000),
+                Spare::create([
+                    'name' => 'Какая-то запчасть №'.($i+1),
+                    'code' => rand(100,999),
+                    'value' => rand(500,50000),
                     'brand_id' => $b
                 ]);
             }

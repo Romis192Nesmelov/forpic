@@ -30,6 +30,10 @@
     <link href="{{ asset('css/perfect-scrollbar.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
 
+    <!-- Lang vars -->
+    @include('layouts._lang_vars_block')
+    <!-- /Lang vars -->
+
     <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script src="https://www.google.com/recaptcha/api.js?hl={{ App::getLocale() }}"></script>
     <!-- Core JS files -->
@@ -52,13 +56,12 @@
     {{--<script type="text/javascript" src="{{ asset('js/plugins/pickers/pickadate/legacy.js') }}"></script>--}}
     {{--<script type="text/javascript" src="{{ asset('js/pages/picker_date.js') }}"></script>--}}
 
-    {{--<script type="text/javascript" src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>--}}
+    <script type="text/javascript" src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/plugins/media/fancybox.min.js') }}"></script>
-    {{--<script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>--}}
+    <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
     {{--<script type="text/javascript" src="{{ asset('js/pages/components_thumbnails.js') }}"></script>--}}
 
-    {{--<script type="text/javascript" src="{{ asset('js/core/main.controls.js') }}"></script>--}}
     <script type="text/javascript" src="{{ asset('js/scrollreveal.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
@@ -86,6 +89,7 @@
 @include('layouts._callback_modal_block')
 @include('layouts._action_modal_block')
 
+<div data-scroll-destination="home"></div>
 <nav class="navbar navbar-default">
     <div class="navbar-header">
         @include('layouts._nav_logo_block',['addClass' => 'visible-xs'])
@@ -124,14 +128,17 @@
 <!-- Footer -->
 <div class="footer">
     <div class="container">
-        <ul class="nav col-md-3 col-sm-3 col-xs-12">
-            @include('layouts._menu_items_block',['menu' => $mainMenu, 'useHome' => true])
+        <ul class="nav col-md-2 col-sm-3 col-xs-12">
+            @include('layouts._menu_items_block',['menu' => array_slice($mainMenu,0,3), 'useHome' => true])
+        </ul>
+        <ul class="nav col-md-2 col-sm-3 col-xs-12">
+            @include('layouts._menu_items_block',['menu' => array_slice($mainMenu,-4), 'useHome' => false])
         </ul>
         <div class="logos col-md-3 col-sm-3 col-xs-12">
-            {!! trans('content.certificated_service') !!}
+            <div>{!! trans('content.certificated_service') !!}</div>
             <img src="{{ asset('images/logo_ford.png') }}" />
             <img src="{{ asset('images/logo_landrover.png') }}" />
-            @include('layouts._phone_block')
+            <div>@include('layouts._phone_block')</div>
         </div>
     </div>
 </div>
