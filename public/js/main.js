@@ -85,7 +85,8 @@ $(document).ready(function() {
     // Scroll controls
     var onTopButton = $('#on-top-button'),
         mainMenuPos = 0,
-        mainMenu = $('.navbar.navbar-default');
+        mainMenu = $('.navbar.navbar-default'),
+        windowHeight = $(window).height();
 
     $(window).scroll(function() {
         var windowScroll = $(window).scrollTop();
@@ -103,7 +104,7 @@ $(document).ready(function() {
             });
         }
 
-        if (windowScroll > 95 && !mainMenuPos) {
+        if (windowScroll > windowHeight/2 && !mainMenuPos) {
             mainMenu.css({
                 'position':'fixed',
                 'top':-1*mainMenu.height(),
@@ -111,14 +112,14 @@ $(document).ready(function() {
             });
             mainMenuPos = 1;
             mainMenu.animate({'top':0});
-        } else if (windowScroll < mainMenu.height() + 20 && mainMenuPos) {
+        } else if (windowScroll < mainMenu.height() && mainMenuPos) {
             mainMenu.css({
                 'position':'relative'
             });
             mainMenuPos = 0;
         }
 
-        if (windowScroll > $(window).height()) onTopButton.fadeIn();
+        if (windowScroll > windowHeight) onTopButton.fadeIn();
         else onTopButton.fadeOut();
     });
 
