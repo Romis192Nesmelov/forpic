@@ -113,14 +113,13 @@ $(document).ready(function() {
             mainMenuPos = 1;
             mainMenu.animate({'top':0});
         } else if (windowScroll < mainMenu.height() && mainMenuPos) {
-            mainMenu.css({
-                'position':'relative'
-            });
+            mainMenu.css({'position':'relative'});
             mainMenuPos = 0;
         }
 
-        if (windowScroll > windowHeight) onTopButton.fadeIn();
-        else onTopButton.fadeOut();
+        if (windowScroll > windowHeight) {
+            onTopButton.fadeIn();
+        } else onTopButton.fadeOut();
     });
 
     // Calculator
