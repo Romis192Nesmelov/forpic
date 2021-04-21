@@ -571,6 +571,13 @@ img.brand-logo {
     background-size: 60%;
 }
 
+@media (max-width: 1400px) {
+    video {
+        width: auto;
+        height: 100%;
+    }
+}
+
 @media (max-width: 1024px) {
     .navbar-nav > li > a {
         padding: 5px;

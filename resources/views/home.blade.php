@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div id="video-container" class="section half-height hidden-xs">
+    <div id="video-container" class="section half-height">
         <video autoplay="autoplay" preload="auto" muted="muted" loop="loop" poster="{{ asset('images/poster.jpg') }}">
             <source src="{{ asset('video/intro1.mp4') }}" type="video/mp4">
             <source src="{{ asset('video/intro1.mov') }}" type="video/quicktime">
@@ -11,9 +11,9 @@
         </video>
     </div>
 
-    <div class="section main half-height visible-xs">
+    {{--<div class="section main half-height visible-xs">--}}
 
-    </div>
+    {{--</div>--}}
 
     <a name="calculator"></a>
     <div class="section" data-scroll-destination="calculator">
