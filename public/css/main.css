@@ -56,10 +56,10 @@ textarea {
     border-bottom: 2px solid #0287a5;
 }
 
-.section.main {
-    background: url('../images/poster.jpg') center no-repeat;
-    background-size: cover;
-}
+/*.section.main {*/
+    /*background: url('../images/poster.jpg') center no-repeat;*/
+    /*background-size: cover;*/
+/*}*/
 
 .section .form-group {
     width: 300px;
