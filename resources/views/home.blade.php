@@ -11,10 +11,6 @@
         </video>
     </div>
 
-    {{--<div class="section main half-height visible-xs">--}}
-
-    {{--</div>--}}
-
     <a name="calculator"></a>
     <div class="section" data-scroll-destination="calculator">
         <div class="container calculator">
@@ -114,7 +110,7 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="works-price">
                     @foreach($data['brands'] as $brand)
-                        @include('_brand_logo_block')
+                        <h2>{{ $brand->name }}</h2>
                         <table class="table datatable-basic table-items price">
                             <tr>
                                 <th class="text-center">{{ trans('content.item_name') }}</th>
@@ -135,7 +131,7 @@
                 </div>
                 <div class="tab-pane" id="spares-price">
                     @foreach($data['brands'] as $brand)
-                        @include('_brand_logo_block')
+                        <h2>{{ $brand->name }}</h2>
                         <table class="table datatable-basic table-items price">
                             <tr>
                                 <th class="text-center">{{ trans('content.item_name') }}</th>

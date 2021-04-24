@@ -136,8 +136,7 @@
         </ul>
         <div class="logos col-md-3 col-sm-3 col-xs-12">
             <div>{!! trans('content.certificated_service') !!}</div>
-            <img src="{{ asset('images/logo_ford.png') }}" />
-            <img src="{{ asset('images/logo_landrover.png') }}" />
+            <h4>Landrover&<br>Ford</h4>
             <div>@include('layouts._phone_block')</div>
         </div>
     </div>

@@ -1,1 +1,0 @@
-<h2><img class="brand-logo" src="{{ asset($brand->image) }}" /> {{ $brand->name }}</h2>
