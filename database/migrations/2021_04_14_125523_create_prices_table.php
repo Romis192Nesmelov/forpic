@@ -13,12 +13,12 @@ class CreatePricesTable extends Migration
      */
     public function up()
     {
-        Schema::create('prices', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name',191);
-            $table->integer('value');
-            $table->timestamps();
-        });
+//        Schema::create('prices', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->string('name',191);
+//            $table->integer('value');
+//            $table->timestamps();
+//        });
     }
 
     /**
@@ -28,6 +28,6 @@ class CreatePricesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prices');
+//        Schema::dropIfExists('prices');
     }
 }

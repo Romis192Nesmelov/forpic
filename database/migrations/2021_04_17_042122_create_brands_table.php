@@ -13,12 +13,12 @@ class CreateBrandsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brands', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('image');
-            $table->string('name');
-            $table->timestamps();
-        });
+//        Schema::create('brands', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->string('image');
+//            $table->string('name');
+//            $table->timestamps();
+//        });
     }
 
     /**
@@ -28,6 +28,6 @@ class CreateBrandsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brands');
+//        Schema::dropIfExists('brands');
     }
 }

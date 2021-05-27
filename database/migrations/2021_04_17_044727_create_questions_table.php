@@ -13,13 +13,13 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('question',191);
-            $table->text('answer',191);
-            $table->boolean('active');
-            $table->timestamps();
-        });
+//        Schema::create('questions', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->string('question',191);
+//            $table->text('answer',191);
+//            $table->boolean('active');
+//            $table->timestamps();
+//        });
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+//        Schema::dropIfExists('questions');
     }
 }

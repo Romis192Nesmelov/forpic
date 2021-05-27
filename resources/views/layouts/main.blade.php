@@ -27,7 +27,6 @@
     <link href="{{ asset('css/loader.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/perfect-scrollbar.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
 
     <!-- Lang vars -->
@@ -77,7 +76,6 @@
     <script type="text/javascript" src="{{ asset('js/preview_image.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/max_height.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('js/perfect-scrollbar.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/yamap.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/masks.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/callback.js') }}"></script>
@@ -151,6 +149,7 @@
 <!-- /footer -->
 
 <div id="on-top-button" data-scroll="home"><i class="icon-arrow-up12"></i></div>
+<a href="https://wa.me/{{ Helper::hrefTel() }}" target="_blank"><img id="whatsapp-icon" src="{{ asset('images/whatsapp-messenger.png') }}"></a>
 <a id="callback-button" data-toggle="modal" data-target="#callback-modal"><i class="icon-phone-wave"></i></a>
 
 </body>

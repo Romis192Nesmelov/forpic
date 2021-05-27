@@ -187,14 +187,14 @@ textarea {
     text-align: center;
 }
 
-.calculator .checkbox-container {
-    margin-bottom: 5px;
-}
+/*.calculator .checkbox-container {*/
+    /*margin-bottom: 5px;*/
+/*}*/
 
-.calculator button {
-    width: 170px;
-    margin-bottom: 20px;
-}
+/*.calculator button {*/
+    /*width: 170px;*/
+    /*margin-bottom: 20px;*/
+/*}*/
 
 .checkbox-inline {
     max-width: calc(100% - 20px);
@@ -390,23 +390,23 @@ video  {
     background-color: #0287a5 !important
 }
 
-img.brand-logo {
-    height: 35px;
-    margin-right: 10px;
-}
+/*img.brand-logo {*/
+    /*height: 35px;*/
+    /*margin-right: 10px;*/
+/*}*/
 
-.brand-logo img {
-    width: 100%;
-}
+/*.brand-logo img {*/
+    /*width: 100%;*/
+/*}*/
 
-.table-items .price {
-    width: 15%;
-    font-size: 16px;
-}
+/*.table-items .price {*/
+    /*width: 15%;*/
+    /*font-size: 16px;*/
+/*}*/
 
-.table-items td.price {
-    color: #0287a5;
-}
+/*.table-items td.price {*/
+    /*color: #0287a5;*/
+/*}*/
 
 .action {
     width: 100%;
@@ -414,6 +414,12 @@ img.brand-logo {
     color: #0287a5;
     font-size: 20px;
     cursor: pointer;
+}
+
+.video > iframe {
+    width: 100%;
+    height: 200px;
+    border: 2px solid #0287a5;
 }
 
 .modal-body .action {
@@ -519,7 +525,7 @@ img.brand-logo {
     position: fixed;
     left: auto;
     right: 27px;
-    bottom: 90px;
+    bottom: 170px;
     z-index: 999;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -529,6 +535,21 @@ img.brand-logo {
 #on-top-button i {
     margin-top: 15px;
     font-size: 20px;
+}
+
+#whatsapp-icon {
+    width: 55px;
+    cursor: pointer;
+    position: fixed;
+    right: 25px;
+    bottom: 90px;
+    z-index: 999;
+}
+
+#whatsapp-icon:hover {
+    width: 45px;
+    right: 30px;
+    bottom: 95px;
 }
 
 #callback-button {
@@ -589,6 +610,12 @@ img.brand-logo {
 }
 
 @media (max-width: 400px) {
+    /*#whatsapp-icon {*/
+        /*width: 50px;*/
+        /*right: calc(5% + 15px);*/
+        /*bottom: calc(7% + 100px);*/
+    /*}*/
+
     .modal-footer button {
         margin: 5px auto;
     }

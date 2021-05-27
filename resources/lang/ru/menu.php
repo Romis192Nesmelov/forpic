@@ -10,5 +10,6 @@ return [
     'spares_price' => 'Цены на запчасти',
     'actions' => 'Акции',
     'questions' => 'Вопрос/ответ',
-    'contacts' => 'Контакты'
+    'contacts' => 'Контакты',
+    'driving_video' => 'Видео проезда'
 ];

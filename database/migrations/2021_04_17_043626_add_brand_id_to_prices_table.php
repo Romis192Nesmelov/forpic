@@ -13,10 +13,10 @@ class AddBrandIdToPricesTable extends Migration
      */
     public function up()
     {
-        Schema::table('prices', function (Blueprint $table) {
-            $table->bigInteger('brand_id', false, true);
-            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
-        });
+//        Schema::table('prices', function (Blueprint $table) {
+//            $table->bigInteger('brand_id', false, true);
+//            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
+//        });
     }
 
     /**
@@ -26,9 +26,9 @@ class AddBrandIdToPricesTable extends Migration
      */
     public function down()
     {
-        Schema::table('prices', function (Blueprint $table) {
-            $table->dropForeign('prices_brand_id_foreign');
-            $table->dropColumn('brand_id');
-        });
+//        Schema::table('prices', function (Blueprint $table) {
+//            $table->dropForeign('prices_brand_id_foreign');
+//            $table->dropColumn('brand_id');
+//        });
     }
 }

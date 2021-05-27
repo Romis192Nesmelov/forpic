@@ -5,5 +5,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Calculator extends Model
 {
-    protected $fillable = ['name','value'];
+//    protected $fillable = ['name','value'];
 }

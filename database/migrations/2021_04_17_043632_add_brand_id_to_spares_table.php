@@ -13,10 +13,10 @@ class AddBrandIdToSparesTable extends Migration
      */
     public function up()
     {
-        Schema::table('spares', function (Blueprint $table) {
-            $table->bigInteger('brand_id', false, true);
-            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
-        });
+//        Schema::table('spares', function (Blueprint $table) {
+//            $table->bigInteger('brand_id', false, true);
+//            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
+//        });
     }
 
     /**
@@ -26,9 +26,9 @@ class AddBrandIdToSparesTable extends Migration
      */
     public function down()
     {
-        Schema::table('spares', function (Blueprint $table) {
-            $table->dropForeign('spares_brand_id_foreign');
-            $table->dropColumn('brand_id');
-        });
+//        Schema::table('spares', function (Blueprint $table) {
+//            $table->dropForeign('spares_brand_id_foreign');
+//            $table->dropColumn('brand_id');
+//        });
     }
 }

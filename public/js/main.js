@@ -23,7 +23,6 @@ $(document).ready(function() {
     });
 
     $('a.img-preview').fancybox({padding: 3});
-    new PerfectScrollbar('html');
 
     halfHeight();
     $(window).resize(function() {
@@ -123,22 +122,22 @@ $(document).ready(function() {
     });
 
     // Calculator
-    var checkBoxes = $('.calculator input'),
-        calculatorTotal = $('#calculator-value');
-    checkBoxes.change(function () {
-        var totalValue = 0;
-        checkBoxes.each(function () {
-            if ($(this).is(':checked')) {
-                totalValue += parseInt($(this).attr('name'));
-            }
-        });
-        calculatorTotal.html(tolocalstring(totalValue));
-    });
-
-    $('.calculator button').click(function () {
-        checkBoxes.prop('checked',false).uniform('refresh');
-        calculatorTotal.html(tolocalstring(0));
-    });
+    // var checkBoxes = $('.calculator input'),
+    //     calculatorTotal = $('#calculator-value');
+    // checkBoxes.change(function () {
+    //     var totalValue = 0;
+    //     checkBoxes.each(function () {
+    //         if ($(this).is(':checked')) {
+    //             totalValue += parseInt($(this).attr('name'));
+    //         }
+    //     });
+    //     calculatorTotal.html(tolocalstring(totalValue));
+    // });
+    //
+    // $('.calculator button').click(function () {
+    //     checkBoxes.prop('checked',false).uniform('refresh');
+    //     calculatorTotal.html(tolocalstring(0));
+    // });
 
     // Click to action
     $('.owl-carousel.actions .action').click(function () {

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCalculatorsTable extends Migration
+class CreateVideosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateCalculatorsTable extends Migration
      */
     public function up()
     {
-//        Schema::create('calculators', function (Blueprint $table) {
-//            $table->bigIncrements('id');
-//            $table->string('name');
-//            $table->integer('value');
-//            $table->timestamps();
-//        });
+        Schema::create('videos', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('link',191);
+            $table->string('description',191);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -28,6 +28,6 @@ class CreateCalculatorsTable extends Migration
      */
     public function down()
     {
-//        Schema::dropIfExists('calculators');
+        Schema::dropIfExists('videos');
     }
 }

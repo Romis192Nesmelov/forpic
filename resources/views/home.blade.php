@@ -11,29 +11,42 @@
         </video>
     </div>
 
-    <a name="calculator"></a>
-    <div class="section" data-scroll-destination="calculator">
-        <div class="container calculator">
-            <h1>{{ trans('menu.calculator') }}</h1>
-            <h2>{{ trans('content.calculate_the_preliminary_cost') }}<sup class="star">*</sup></h2>
+    {{--<a name="calculator"></a>--}}
+    {{--<div class="section" data-scroll-destination="calculator">--}}
+        {{--<div class="container calculator">--}}
+            {{--<h1>{{ trans('menu.calculator') }}</h1>--}}
+            {{--<h2>{{ trans('content.calculate_the_preliminary_cost') }}<sup class="star">*</sup></h2>--}}
 
-            @include('_calculator_block',['items' => $data['calculator'], 'start' => 0])
-            @include('_calculator_block',['items' => $data['calculator'], 'start' => 6])
-            @include('_calculator_block',['items' => $data['calculator'], 'start' => 12])
+            {{--@include('_calculator_block',['items' => $data['calculator'], 'start' => 0])--}}
+            {{--@include('_calculator_block',['items' => $data['calculator'], 'start' => 6])--}}
+            {{--@include('_calculator_block',['items' => $data['calculator'], 'start' => 12])--}}
 
-            <h1 id="calculator-value" class="text-center text-blue">{{ Helper::moneyFormat(0) }}</h1>
-            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                @include('_button_block', [
-                    'type' => 'button',
-                    'text' => trans('content.reset'),
-                    'icon' => 'icon-reset'
-                ])
-                <p class="text-center text-gray"><sup class="star">*</sup> {{ trans('content.exact_cost') }}</p>
+            {{--<h1 id="calculator-value" class="text-center text-blue">{{ Helper::moneyFormat(0) }}</h1>--}}
+            {{--<div class="col-md-12 col-sm-12 col-xs-12 text-center">--}}
+                {{--@include('_button_block', [--}}
+                    {{--'type' => 'button',--}}
+                    {{--'text' => trans('content.reset'),--}}
+                    {{--'icon' => 'icon-reset'--}}
+                {{--])--}}
+                {{--<p class="text-center text-gray"><sup class="star">*</sup> {{ trans('content.exact_cost') }}</p>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+
+    <a name="about_us"></a>
+    <div class="section about" data-scroll-destination="about_us">
+        <div class="container">
+            <h1>{{ trans('menu.about_us') }}</h1>
+            <div class="col-md-6 col-sm-10 col-xs-12">
+                <p>Автосервис Forpic является небольшим клубным автосервисом «для своих».</p>
+                <p>Forpic открылся в 2005 году. Основным направлением деятельности стал ремонт и постгарантийное обслуживание автомобилей различных марок. Годы работы подтолкнули к решению сфокусироваться на двух марках - Land Rover и Ford. Специализированное оборудование, запасные части, опыт мастеров - все это заточено под ремонт и техническое обслуживание этих двух марок автомобилей.</p>
+                <p>Forpic - это клуб любителей Land Rover и Ford. <b>Мастера</b>, работающие у нас - профессионалы <b>со стажем работы с этими марками от 10 лет.</b></p>
+                <p>Качество работ, цены ниже дилеров, квалифицированные консультации и доверительная обстановка притягивают к нам клиентов не только из Текстильщиков и Печатников, ВАО и ЮВАО, но и со всей Москвы. Производственные мощности СТО, на сегодняшний день, позволяют распахнуть двери для новых любителей английских и американских машин. Мы знаем, любим и восхищаемся двумя марками автомобилей. Кроме ремонта и обслуживания автомобилей компания имеет большой ассортимент оригинальных запасных частей и качественных аналогов. Некоторые детали, которые есть у нас, очень трудно отыскать во всем городе.</p>
             </div>
         </div>
     </div>
 
-    <div class="section gray">
+    <div class="section">
         <div class="container">
             <h1>{{ trans('content.callback_me') }}</h1>
             <form class="form-horizontal text-center" action="{{ url('/callback') }}" method="post">
@@ -63,17 +76,6 @@
         </div>
     </div>
 
-    <a name="about_us"></a>
-    <div class="section about" data-scroll-destination="about_us">
-        <div class="container">
-            <h1>{{ trans('menu.about_us') }}</h1>
-            <div class="col-md-6 col-sm-10 col-xs-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus rhoncus egestas. In elementum arcu at dui imperdiet fermentum. Aenean non elementum ipsum. Curabitur sit amet pretium arcu, eget viverra nulla. Phasellus facilisis condimentum blandit. Proin in interdum velit. Mauris vitae blandit urna, eget varius quam. In efficitur laoreet augue, vel tincidunt felis aliquet vitae. Vestibulum vitae mauris bibendum, congue neque ut, egestas libero. Donec venenatis egestas mauris. Etiam placerat purus dui, vel feugiat dui congue vel. Sed a diam ac tellus tristique tempor. In placerat imperdiet eros.</p>
-                <p>Cras eget ipsum a ipsum viverra sodales tincidunt at elit. Aenean dignissim consectetur arcu. Donec vestibulum luctus tortor, ut molestie enim molestie at. Maecenas eu eleifend ligula. Nulla purus lorem, commodo at tincidunt in, tincidunt id massa. Donec a lectus a erat porta porttitor. Mauris tristique dolor sit amet tincidunt semper. Praesent aliquam non nunc eu elementum. Nulla facilisi. Proin in aliquam metus, id congue nisi. Duis auctor neque sed lectus aliquam blandit. Aenean a augue ornare, volutpat risus id, elementum nulla. Nulla aliquam sem non erat eleifend, quis rhoncus nulla ornare. Aenean molestie ornare urna et finibus. Nunc eu felis erat.</p>
-            </div>
-        </div>
-    </div>
-
     <a name="documents"></a>
     <div class="section gray" data-scroll-destination="documents">
         <div class="container">
@@ -91,84 +93,84 @@
         </div>
     </div>
 
-    <a name="prices"></a>
-    <a name="works"></a>
-    <a name="spares"></a>
+    {{--<a name="prices"></a>--}}
+    {{--<a name="works"></a>--}}
+    {{--<a name="spares"></a>--}}
 
-    <div class="section" data-scroll-destination="prices">
-        <div data-scroll-destination="works"></div>
-        <div data-scroll-destination="spares"></div>
+    {{--<div class="section" data-scroll-destination="prices">--}}
+        {{--<div data-scroll-destination="works"></div>--}}
+        {{--<div data-scroll-destination="spares"></div>--}}
 
-        <div class="container">
-            <h1>{{ trans('content.base_prices') }}</h1>
+        {{--<div class="container">--}}
+            {{--<h1>{{ trans('content.base_prices') }}</h1>--}}
 
-            <ul class="nav nav-tabs nav-tabs-highlight nav-justified">
-                <li class="active"><a href="#works-price" data-toggle="tab">{{ trans('menu.works_price') }}</a></li>
-                <li><a href="#spares-price" data-toggle="tab">{{ trans('menu.spares_price') }}</a></li>
-            </ul>
+            {{--<ul class="nav nav-tabs nav-tabs-highlight nav-justified">--}}
+                {{--<li class="active"><a href="#works-price" data-toggle="tab">{{ trans('menu.works_price') }}</a></li>--}}
+                {{--<li><a href="#spares-price" data-toggle="tab">{{ trans('menu.spares_price') }}</a></li>--}}
+            {{--</ul>--}}
 
-            <div class="tab-content">
-                <div class="tab-pane active" id="works-price">
-                    @foreach($data['brands'] as $brand)
-                        <h2>{{ $brand->name }}</h2>
-                        <table class="table datatable-basic table-items price">
-                            <tr>
-                                <th class="text-center">{{ trans('content.item_name') }}</th>
-                                <th class="text-center price">{{ trans('content.price') }}</th>
-                                <th></th>
-                                <th class="text-center">{{ trans('content.updated_at') }}</th>
-                            </tr>
-                            @foreach($brand->prices as $price)
-                                <tr>
-                                    <td class="text-left">{{ $price->name }}</td>
-                                    <td class="text-center price">{{ Helper::moneyFormat($price->value) }}</td>
-                                    <td></td>
-                                    <td class="text-center">{{ $price->updated_at->format('d.m.Y') }}</td>
-                                </tr>
-                            @endforeach
-                        </table>
-                    @endforeach
-                </div>
-                <div class="tab-pane" id="spares-price">
-                    @foreach($data['brands'] as $brand)
-                        <h2>{{ $brand->name }}</h2>
-                        <table class="table datatable-basic table-items price">
-                            <tr>
-                                <th class="text-center">{{ trans('content.item_name') }}</th>
-                                <th class="text-center price">{{ trans('content.price') }}</th>
-                                <th class="text-center">{{ trans('content.vendor_code') }}</th>
-                                <th class="text-center">{{ trans('content.updated_at') }}</th>
-                            </tr>
-                            @foreach($brand->spares as $spare)
-                                <tr>
-                                    <td class="text-left">{{ $spare->name }}</td>
-                                    <td class="text-center price">{{ Helper::moneyFormat($spare->value) }}</td>
-                                    <td class="text-center">{{ $spare->code }}</td>
-                                    <td class="text-center">{{ $spare->updated_at->format('d.m.Y') }}</td>
-                                </tr>
-                            @endforeach
-                        </table>
-                    @endforeach
-                </div>
-            </div>
-            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                <a data-toggle="modal" data-target="#callback-modal">
-                    @include('_button_block', [
-                        'addClass' => 'long-button',
-                        'type' => 'button',
-                        'text' => trans('content.i_want_to_order'),
-                        'icon' => 'icon-phone-wave',
-                        'addAttr' => ['id' => 'call_me'],
-                        'disabled' => false
-                    ])
-                </a>
-                <p class="text-center text-gray">{!! trans('content.to_clarify_the_price').view('layouts._phone_block')->render() !!}</p>
-            </div>
-        </div>
-    </div>
+            {{--<div class="tab-content">--}}
+                {{--<div class="tab-pane active" id="works-price">--}}
+                    {{--@foreach($data['brands'] as $brand)--}}
+                        {{--<h2>{{ $brand->name }}</h2>--}}
+                        {{--<table class="table datatable-basic table-items price">--}}
+                            {{--<tr>--}}
+                                {{--<th class="text-center">{{ trans('content.item_name') }}</th>--}}
+                                {{--<th class="text-center price">{{ trans('content.price') }}</th>--}}
+                                {{--<th></th>--}}
+                                {{--<th class="text-center">{{ trans('content.updated_at') }}</th>--}}
+                            {{--</tr>--}}
+                            {{--@foreach($brand->prices as $price)--}}
+                                {{--<tr>--}}
+                                    {{--<td class="text-left">{{ $price->name }}</td>--}}
+                                    {{--<td class="text-center price">{{ Helper::moneyFormat($price->value) }}</td>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td class="text-center">{{ $price->updated_at->format('d.m.Y') }}</td>--}}
+                                {{--</tr>--}}
+                            {{--@endforeach--}}
+                        {{--</table>--}}
+                    {{--@endforeach--}}
+                {{--</div>--}}
+                {{--<div class="tab-pane" id="spares-price">--}}
+                    {{--@foreach($data['brands'] as $brand)--}}
+                        {{--<h2>{{ $brand->name }}</h2>--}}
+                        {{--<table class="table datatable-basic table-items price">--}}
+                            {{--<tr>--}}
+                                {{--<th class="text-center">{{ trans('content.item_name') }}</th>--}}
+                                {{--<th class="text-center price">{{ trans('content.price') }}</th>--}}
+                                {{--<th class="text-center">{{ trans('content.vendor_code') }}</th>--}}
+                                {{--<th class="text-center">{{ trans('content.updated_at') }}</th>--}}
+                            {{--</tr>--}}
+                            {{--@foreach($brand->spares as $spare)--}}
+                                {{--<tr>--}}
+                                    {{--<td class="text-left">{{ $spare->name }}</td>--}}
+                                    {{--<td class="text-center price">{{ Helper::moneyFormat($spare->value) }}</td>--}}
+                                    {{--<td class="text-center">{{ $spare->code }}</td>--}}
+                                    {{--<td class="text-center">{{ $spare->updated_at->format('d.m.Y') }}</td>--}}
+                                {{--</tr>--}}
+                            {{--@endforeach--}}
+                        {{--</table>--}}
+                    {{--@endforeach--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-md-12 col-sm-12 col-xs-12 text-center">--}}
+                {{--<a data-toggle="modal" data-target="#callback-modal">--}}
+                    {{--@include('_button_block', [--}}
+                        {{--'addClass' => 'long-button',--}}
+                        {{--'type' => 'button',--}}
+                        {{--'text' => trans('content.i_want_to_order'),--}}
+                        {{--'icon' => 'icon-phone-wave',--}}
+                        {{--'addAttr' => ['id' => 'call_me'],--}}
+                        {{--'disabled' => false--}}
+                    {{--])--}}
+                {{--</a>--}}
+                {{--<p class="text-center text-gray">{!! trans('content.to_clarify_the_price').view('layouts._phone_block')->render() !!}</p>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     <a name="actions"></a>
-    <div class="section gray" data-scroll-destination="actions">
+    <div class="section" data-scroll-destination="actions">
         <div class="container">
             <h1>{{ trans('menu.actions') }}</h1>
             <div class="owl-carousel actions">
@@ -183,27 +185,27 @@
         </div>
     </div>
 
-    <a name="faq"></a>
-    <div class="section" data-scroll-destination="faq">
-        <div class="container">
-            <h1>{{ trans('menu.questions') }}</h1>
-            <div class="panel-group content-group-lg" id="faq">
-                @foreach($data['questions'] as $item)
-                    <div class="panel panel-white">
-                        <div class="panel-heading">
-                            <h3 class="panel-title text-left">
-                                <a data-toggle="collapse" href="#faq{{ $item->id }}">{{ $item->question }}</a>
-                                <i class="icon-help pull-right text-slate"></i>
-                            </h3>
-                        </div>
-                        <div id="faq{{ $item->id }}" class="panel-collapse collapse">
-                            <div class="panel-body">{{ $item->answer }}</div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
+    {{--<a name="faq"></a>--}}
+    {{--<div class="section" data-scroll-destination="faq">--}}
+        {{--<div class="container">--}}
+            {{--<h1>{{ trans('menu.questions') }}</h1>--}}
+            {{--<div class="panel-group content-group-lg" id="faq">--}}
+                {{--@foreach($data['questions'] as $item)--}}
+                    {{--<div class="panel panel-white">--}}
+                        {{--<div class="panel-heading">--}}
+                            {{--<h3 class="panel-title text-left">--}}
+                                {{--<a data-toggle="collapse" href="#faq{{ $item->id }}">{{ $item->question }}</a>--}}
+                                {{--<i class="icon-help pull-right text-slate"></i>--}}
+                            {{--</h3>--}}
+                        {{--</div>--}}
+                        {{--<div id="faq{{ $item->id }}" class="panel-collapse collapse">--}}
+                            {{--<div class="panel-body">{{ $item->answer }}</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--@endforeach--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     <a name="contacts"></a>
     <div class="section gray" data-scroll-destination="contacts">
@@ -215,5 +217,21 @@
         </div>
     </div>
     <div class="half-height" id="map"></div>
-    <script>window.address = "{{ Settings::getSettings()->address }}";</script>
+    <script>
+        window.address = "{{ Settings::getSettings()->address }}";
+    </script>
+
+    <a name="driving"></a>
+    <div class="section" data-scroll-destination="driving">
+        <div class="container">
+            <h1>{{ trans('menu.driving_video') }}</h1>
+            @foreach ($data['video'] as $video)
+                <div class="col-md-{{ ceil(12/count($data['video'])) }} col-sm-12 col-xs-12 video">
+                    <iframe src="https://www.youtube.com/embed/{{ $video->link }}?controls=0" title="{{ $video->description }}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="description text-center">{{ $video->description }}</div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
 @endsection

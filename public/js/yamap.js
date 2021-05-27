@@ -14,11 +14,6 @@ function init() {
 
     var icon = ymaps.templateLayoutFactory.createClass('<div class="map-point"></div>');
     addingPoints(myMap, coordinates, icon);
-
-    // myMap.geoObjects.events.add('click', function (e) {
-    //     var data = e.get('target').properties._data;
-    //     window.location.href = '/' + data.baseType + '?id=' + data.baseId;
-    // });
 }
 
 function addingPoints(myMap, coordinates, icon) {

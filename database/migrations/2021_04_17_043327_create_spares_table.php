@@ -13,13 +13,13 @@ class CreateSparesTable extends Migration
      */
     public function up()
     {
-        Schema::create('spares', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name',191);
-            $table->string('code',191);
-            $table->integer('value');
-            $table->timestamps();
-        });
+//        Schema::create('spares', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->string('name',191);
+//            $table->string('code',191);
+//            $table->integer('value');
+//            $table->timestamps();
+//        });
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateSparesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spares');
+//        Schema::dropIfExists('spares');
     }
 }
