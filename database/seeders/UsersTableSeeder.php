@@ -10,7 +10,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $data = [
-            ['email' => 'romis.nesmelov@gmail.com', 'password' => bcrypt('fuckingpassword')],
+            ['email' => 'romis.nesmelov@gmail.com', 'password' => bcrypt('apg192')],
             ['email' => 'Forpic@forpic.ru', 'password' => bcrypt('forpic')],
         ];
         

@@ -119,13 +119,13 @@ textarea {
     width: 100%;
 }
 
-.document {
+.gallery {
     text-align: center;
     font-size: 13px;
     color: #004150;
 }
 
-.document .image {
+.gallery .image {
     width: 100%;
     margin-bottom: 5px;
 }
@@ -408,11 +408,24 @@ video  {
     /*color: #0287a5;*/
 /*}*/
 
+.reason i {
+    width: 100%;
+    display: block;
+    font-size: 70px;
+}
+
+.reason .description {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.2em;
+}
+
 .action {
     width: 100%;
     text-align: center;
     color: #0287a5;
-    font-size: 20px;
+    font-size: 17px;
     cursor: pointer;
 }
 

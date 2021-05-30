@@ -5,6 +5,7 @@ return [
     'calculator' => 'Калькулятор',
     'about_us' => 'О компании',
     'documents' => 'Документы',
+    'gallery' => 'Галерея',
     'works_spares' => 'Работы/Запчасти',
     'works_price' => 'Цены на ремонт',
     'spares_price' => 'Цены на запчасти',

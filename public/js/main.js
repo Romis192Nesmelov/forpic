@@ -34,7 +34,7 @@ $(document).ready(function() {
         navButtonBlack2 = '<img src="/images/arrow_right_black.svg" />';
         // navButtonWhite1 = '<img src="/images/arrow_left_white.svg" />',
         // navButtonWhite2 = '<img src="/images/arrow_right_white.svg" />';
-    $('.owl-carousel.documents').owlCarousel({
+    $('.owl-carousel.galleries').owlCarousel({
         margin: 10,
         loop: true,
         nav: true,

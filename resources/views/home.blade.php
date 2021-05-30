@@ -36,13 +36,20 @@
     <a name="about_us"></a>
     <div class="section about" data-scroll-destination="about_us">
         <div class="container">
-            <h1>{{ trans('menu.about_us') }}</h1>
-            <div class="col-md-6 col-sm-10 col-xs-12">
-                <p>Автосервис Forpic является небольшим клубным автосервисом «для своих».</p>
-                <p>Forpic открылся в 2005 году. Основным направлением деятельности стал ремонт и постгарантийное обслуживание автомобилей различных марок. Годы работы подтолкнули к решению сфокусироваться на двух марках - Land Rover и Ford. Специализированное оборудование, запасные части, опыт мастеров - все это заточено под ремонт и техническое обслуживание этих двух марок автомобилей.</p>
-                <p>Forpic - это клуб любителей Land Rover и Ford. <b>Мастера</b>, работающие у нас - профессионалы <b>со стажем работы с этими марками от 10 лет.</b></p>
-                <p>Качество работ, цены ниже дилеров, квалифицированные консультации и доверительная обстановка притягивают к нам клиентов не только из Текстильщиков и Печатников, ВАО и ЮВАО, но и со всей Москвы. Производственные мощности СТО, на сегодняшний день, позволяют распахнуть двери для новых любителей английских и американских машин. Мы знаем, любим и восхищаемся двумя марками автомобилей. Кроме ремонта и обслуживания автомобилей компания имеет большой ассортимент оригинальных запасных частей и качественных аналогов. Некоторые детали, которые есть у нас, очень трудно отыскать во всем городе.</p>
-            </div>
+            <h1>{{ $data['content']->head }}</h1>
+            <div class="col-md-6 col-sm-10 col-xs-12">{!! $data['content']->text !!}</div>
+        </div>
+    </div>
+
+    <div class="section gray">
+        <div class="container">
+            <h1>{{ trans('content.six_reasons') }}</h1>
+            @foreach($data['reasons'] as $reason)
+                <div class="reason col-md-2 col-sm-4 col-xs-12">
+                    <i class="{{ $reason->icon }}"></i>
+                    <div class="description">{{ $reason->description }}</div>
+                </div>
+            @endforeach
         </div>
     </div>
 
@@ -76,13 +83,13 @@
         </div>
     </div>
 
-    <a name="documents"></a>
-    <div class="section gray" data-scroll-destination="documents">
+    <a name="gallery"></a>
+    <div class="section gray" data-scroll-destination="gallery">
         <div class="container">
-            <h1>{{ trans('menu.documents') }}</h1>
-            <div class="owl-carousel documents">
-                @foreach($data['documents'] as $document)
-                    <div class="document">
+            <h1>{{ trans('menu.gallery') }}</h1>
+            <div class="owl-carousel galleries">
+                @foreach($data['images'] as $document)
+                    <div class="gallery">
                         <div class="image">
                             <a class="img-preview" href="{{ asset($document->path) }}"><img src="{{ asset($document->path) }}" /></a>
                         </div>
