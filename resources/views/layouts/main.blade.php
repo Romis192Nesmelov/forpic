@@ -33,7 +33,7 @@
     @include('layouts._lang_vars_block')
     <!-- /Lang vars -->
 
-    <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang={{ App::getLocale().'_'.strtoupper(App::getLocale()) }}"></script>
+    <script type="text/javascript" src="https://api-maps.yandex.ru/2.1?apikey=fa455148-7970-4574-b087-4f913652328d&lang={{ App::getLocale().'_'.strtoupper(App::getLocale()) }}"></script>
     <script src="https://www.google.com/recaptcha/api.js?hl={{ App::getLocale() }}"></script>
     <!-- Core JS files -->
     <script type="text/javascript" src="{{ asset('js/core/libraries/jquery.min.js') }}"></script>
