@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Action extends Model
@@ -9,6 +9,6 @@ class Action extends Model
     
     public function options()
     {
-        return $this->hasMany('App\ActionOption');
+        return $this->hasMany('App\Models\ActionOption');
     }
 }

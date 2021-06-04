@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Question;
+use App\Models\Question;
 
 class QuestionsTableSeeder extends Seeder
 {

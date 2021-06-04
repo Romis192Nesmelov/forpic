@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Reason;
+use App\Models\Reason;
 
 class ReasonsTableSeeder extends Seeder
 {

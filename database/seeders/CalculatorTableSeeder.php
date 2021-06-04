@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Calculator;
+use App\Models\Calculator;
 
 class CalculatorTableSeeder extends Seeder
 {

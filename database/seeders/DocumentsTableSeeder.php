@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Document;
+use App\Models\Document;
 
 class DocumentsTableSeeder extends Seeder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class ActionOption extends Model
@@ -9,6 +9,6 @@ class ActionOption extends Model
 
     public function action()
     {
-        return $this->belongsTo('App\Action');
+        return $this->belongsTo('App\Models\Action');
     }
 }

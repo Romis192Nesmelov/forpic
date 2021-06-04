@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Spare;
+use App\Models\Spare;
 
 class SparesTableSeeder extends Seeder
 {

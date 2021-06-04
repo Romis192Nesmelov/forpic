@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Image;
+use App\Models\Image;
 
 class ImagesTableSeeder extends Seeder
 {

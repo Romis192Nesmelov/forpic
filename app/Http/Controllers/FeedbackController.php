@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Action;
+use App\Models\Action;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller

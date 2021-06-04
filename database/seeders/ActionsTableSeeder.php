@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Action;
-use App\ActionOption;
+use App\Models\Action;
+use App\Models\ActionOption;
 
 class ActionsTableSeeder extends Seeder
 {

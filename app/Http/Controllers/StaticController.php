@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Content;
-use App\Reason;
-use App\Image;
-//use App\Document;
-//use App\Calculator;
-//use App\Brand;
-//use App\Question;
-use App\Action;
-use App\Video;
+use App\Models\Content;
+use App\Models\Reason;
+use App\Models\Image;
+//use App\Models\Document;
+//use App\Models\Calculator;
+//use App\Models\Brand;
+//use App\Models\Question;
+use App\Models\Action;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Settings;
 

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Video;
+use App\Models\Video;
 
 class VideoTableSeeder extends Seeder
 {

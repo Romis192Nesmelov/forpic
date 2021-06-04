@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use App\Content;
+use App\Models\Content;
 
 class ContentTableSeeder extends Seeder
 {
