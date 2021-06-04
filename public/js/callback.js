@@ -19,7 +19,8 @@ $(document).ready(function ($) {
             textarea = form.find('textarea'),
             select = form.find('select'),
             radio = form.find('input[type=radio]'),
-            agree = form.find('input[type=checkbox]').is(':checked'),
+            checkboxes = form.find('input[type=checkbox]'),
+            agree = form.find('input[name=i_agree]').is(':checked'),
             fields = {},
             token = form.find('input[name=_token]').val();
 
@@ -28,14 +29,8 @@ $(document).ready(function ($) {
         fields = processingFields(fields,form.find('input'));
         fields = processingFields(fields,select);
         fields = processingFields(fields,textarea);
-
-        if (radio.length) {
-            radio.each(function(){
-                if($(this).is(':checked')) {
-                    fields[$(this).attr('name')] = $(this).val();
-                }
-            });
-        }
+        fields = processingCheckFields(fields,radio);
+        fields = processingCheckFields(fields,checkboxes);
         
         fields['_token'] = token;
         fields['i_agree'] = agree;
@@ -44,7 +39,7 @@ $(document).ready(function ($) {
         var allErrors = $('.form-group.has-feedback.has-error');
         allErrors.removeClass('has-error');
         allErrors.find('.help-block').html('');
-        
+
         addLoaderScreen();
 
         $.post(form.attr('action'), fields)
@@ -69,7 +64,7 @@ $(document).ready(function ($) {
                     var errorMsg = error[0],
                         errorBlock = $('.input-'+field).parents('.form-group.has-feedback'),
                         errorMessage = errorBlock.find('.help-block');
-        
+
                     $.each(replaceErr, function (src,replace) {
                         errorMsg = errorMsg.replace(src,replace);
                     });
@@ -84,12 +79,22 @@ $(document).ready(function ($) {
 function processingFields(fields, inputObj) {
     if (inputObj.length) {
         $.each(inputObj, function (key, obj) {
-            fields[obj.name] = obj.value;
+            if (obj.type != 'checkbox' && obj.type != 'radio') fields[obj.name] = obj.value;
         });
     }
     return fields;
 }
 
+function processingCheckFields(fields, inputObj) {
+    if (inputObj.length) {
+        inputObj.each(function(){
+            if($(this).is(':checked')) {
+                fields[$(this).attr('name')] = $(this).val();
+            }
+        });
+    }
+    return fields;
+}
 
 function unlockSendButton(obj) {
     var form = obj.parents('form'),

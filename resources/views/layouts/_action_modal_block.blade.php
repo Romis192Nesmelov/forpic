@@ -3,11 +3,8 @@
 <form class="form-horizontal" action="{{ url('/action') }}" method="post">
     {{ csrf_field() }}
     <input type="hidden" name="id" value="">
-    <div class="modal-body ">
-        <div class="action">
-            <h1 class="text-center"></h1>
-            <img src="" />
-        </div>
+    <div class="modal-body">
+        <img src="" />
         <p class="description"></p>
         <div class="options"></div>
         <p class="note"></p>

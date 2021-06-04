@@ -460,7 +460,8 @@ video  {
     margin-bottom: 10px;
 }
 
-.modal-body .action img {
+.modal-body img {
+    width: 100%;
     margin-bottom: 20px;
 }
 
