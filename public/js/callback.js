@@ -20,7 +20,8 @@ $(document).ready(function ($) {
             select = form.find('select'),
             radio = form.find('input[type=radio]'),
             agree = form.find('input[type=checkbox]').is(':checked'),
-            fields = {};
+            fields = {},
+            token = form.find('input[name=_token]').val();
 
         if (!agree) return false;
 
@@ -35,8 +36,8 @@ $(document).ready(function ($) {
                 }
             });
         }
-
-        fields['_token'] = form.find('input[name=_token]').val();
+        
+        fields['_token'] = token;
         fields['i_agree'] = agree;
 
         $('.error').html('');
@@ -68,7 +69,7 @@ $(document).ready(function ($) {
                     var errorMsg = error[0],
                         errorBlock = $('.input-'+field).parents('.form-group.has-feedback'),
                         errorMessage = errorBlock.find('.help-block');
-                        
+        
                     $.each(replaceErr, function (src,replace) {
                         errorMsg = errorMsg.replace(src,replace);
                     });

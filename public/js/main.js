@@ -142,14 +142,34 @@ $(document).ready(function() {
     // Click to action
     $('.owl-carousel.actions .action').click(function () {
         var actionModal = $('#action-modal'),
-            image = $(this).find('img').attr('src'),
-            title = $(this).find('.title').html(),
-            description = $(this).find('.description').html();
+            actionId = parseInt($(this).attr('id').replace('action_','')),
+            optionsDiv = actionModal.find('.options');
 
-        actionModal.find('h2').html(title);
-        actionModal.find('img').attr('src',image);
-        actionModal.find('p').html(description);
-        actionModal.modal('show');
+        optionsDiv.html('');
+        addLoaderScreen();
+        $.post('/get-action', {
+            'id':actionId,
+            '_token':$('input[name=_token]').val()
+        }).done(function(data){
+
+            var action = data.action;
+            actionModal.find('input[name=id]').val(actionId);
+            actionModal.find('h1').html(action.name);
+            actionModal.find('img').attr('src','/'+action.image);
+            actionModal.find('p.description').html(action.description);
+            actionModal.find('p.note').html(action.note);
+
+            if (action.options.length) {
+                $.each(action.options, function (k, option) {
+                    optionsDiv.append(
+                        '<div class="checkbox-container"><input type="checkbox" name="option_'+option.id+'" class="styled"><label class="checkbox-inline">'+option.description+'</label></div>'
+                    );
+                });
+                $('.styled').uniform();
+            }
+            removeLoaderScreen();
+            actionModal.modal('show');
+        });
     });
 });
 

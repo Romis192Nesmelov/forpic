@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Action;
+use App\ActionOption;
 
 class ActionsTableSeeder extends Seeder
 {
@@ -19,6 +20,7 @@ class ActionsTableSeeder extends Seeder
                 'image' => 'images/actions/action2.jpg',
                 'name' => 'Давайте знакомиться!',
                 'description' => 'При первом обращении в наш сервис, мы дарим бесплатную диагностику. Успейте записаться!',
+                'note' => 'Все диагностики не включают в себя слесарные работы',
                 'active' => 1
             ],
             [
@@ -31,6 +33,13 @@ class ActionsTableSeeder extends Seeder
 
         foreach ($data as $item) {
             Action::create($item);
+        }
+        
+        foreach (['Ходовая диагностика','Компьютерная диагностика','Диагностика тормозной системы'] as $option) {
+            ActionOption::create([
+                'description' => $option,
+                'action_id' => 2
+            ]);
         }
     }
 }

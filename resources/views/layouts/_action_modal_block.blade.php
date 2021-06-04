@@ -1,14 +1,16 @@
 @php ob_start(); @endphp
 
-<form class="form-horizontal" action="{{ url('/callback') }}" method="post">
+<form class="form-horizontal" action="{{ url('/action') }}" method="post">
     {{ csrf_field() }}
+    <input type="hidden" name="id" value="">
     <div class="modal-body ">
         <div class="action">
-            <h2 class="text-center"></h2>
+            <h1 class="text-center"></h1>
             <img src="" />
         </div>
-
-        <p></p>
+        <p class="description"></p>
+        <div class="options"></div>
+        <p class="note"></p>
 
         <h3>{{ trans('content.callback_me') }}</h3>
         @include('_input_block', [
@@ -31,7 +33,7 @@
             'usingAjax' => true
         ])
 
-        @include('_re_captcha_block',['usingAjax' => true])
+        {{--@include('_re_captcha_block',['usingAjax' => true])--}}
 
         @include('_checkbox_block',[
             'addClass' => 'i_agree',

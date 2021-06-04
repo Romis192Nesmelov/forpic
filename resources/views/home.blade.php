@@ -66,6 +66,8 @@
                     'usingAjax' => true
                 ])
 
+{{--                @include('_re_captcha_block',['usingAjax' => true])--}}
+
                 @include('_checkbox_block',[
                     'addClass' => 'i_agree',
                     'name' => 'i_agree',
@@ -182,10 +184,9 @@
             <h1>{{ trans('menu.actions') }}</h1>
             <div class="owl-carousel actions">
                 @foreach($data['actions'] as $action)
-                    <div class="action">
+                    <div class="action" id="action_{{ $action->id }}">
                         <img src="{{ asset($action->image) }}" />
                         <div class="title">{{ $action->name }}</div>
-                        <div class="description">{{ $action->description }}</div>
                     </div>
                 @endforeach
             </div>

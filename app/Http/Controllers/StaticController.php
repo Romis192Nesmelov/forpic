@@ -10,7 +10,7 @@ use App\Image;
 //use App\Question;
 use App\Action;
 use App\Video;
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Settings;
 
 class StaticController extends Controller
@@ -31,6 +31,21 @@ class StaticController extends Controller
         $this->data['actions'] = Action::where('active',1)->get();
         $this->data['video'] = Video::all();
         return $this->showView('home');
+    }
+
+    public function getAction(Request $request)
+    {
+        $this->validate($request, ['id' => 'required|integer|exists:actions,id']);
+        $action = Action::find($request->input('id'));
+        $fields = [];
+        foreach ($action->attributesToArray() as $name => $value) {
+            $fields[$name] = $value;
+        }
+        $fields['options'] = [];
+        foreach ($action->options as $option) {
+            $fields['options'][] = ['id' => $option->id, 'description' => $option->description];
+        }
+        return response()->json(['success' => true, 'action' => $fields]);
     }
 
     protected function showView($view)

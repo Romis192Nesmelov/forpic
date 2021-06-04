@@ -464,8 +464,20 @@ video  {
     margin-bottom: 20px;
 }
 
-.action .description {
-    display: none;
+.modal-body  p.description {
+    font-size: 17px;
+}
+
+.modal-body .options {
+    width: 100%;
+    font-size: 15px;
+    display: table;
+}
+
+.modal-body  p.note {
+    margin-top: 15px;
+    font-size: 12px;
+    color: grey;
 }
 
 .footer {

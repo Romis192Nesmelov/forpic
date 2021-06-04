@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateActionsTable extends Migration
+class CreateActionOptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateActionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('actions', function (Blueprint $table) {
+        Schema::create('action_options', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('image',191);
-            $table->string('name',191);
-            $table->text('description');
-            $table->text('note')->nullable();
-            $table->boolean('active');
+            $table->string('description',191);
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateActionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actions');
+        Schema::dropIfExists('action_options');
     }
 }
