@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Content;
 use App\Models\Reason;
-use App\Models\Image;
+//use App\Models\Image;
 //use App\Models\Document;
 //use App\Models\Calculator;
 //use App\Models\Brand;
@@ -27,7 +27,7 @@ class StaticController extends Controller
 //        $this->data['questions'] = Question::where('active',1)->get();
         $this->data['content'] = Content::find(1);
         $this->data['reasons'] = Reason::all();
-        $this->data['images'] = Image::where('active',1)->get();
+//        $this->data['images'] = Image::where('active',1)->get();
         $this->data['actions'] = Action::where('active',1)->get();
         $this->data['video'] = Video::all();
         return $this->showView('home');
@@ -53,7 +53,7 @@ class StaticController extends Controller
         $mainMenu = [
 //            ['data_scroll' => 'calculator', 'name' => trans('menu.calculator')],
             ['data_scroll' => 'about_us', 'name' => trans('menu.about_us')],
-            ['data_scroll' => 'gallery', 'name' => trans('menu.gallery')],
+//            ['data_scroll' => 'gallery', 'name' => trans('menu.gallery')],
 //            ['data_scroll' => 'prices', 'name' => trans('menu.works_spares'), 'submenu' => [
 //                    trans('menu.works_price') => 'works',
 //                    trans('menu.spares_price') => 'spares'

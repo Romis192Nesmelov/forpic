@@ -85,22 +85,22 @@
         </div>
     </div>
 
-    <a name="gallery"></a>
-    <div class="section gray" data-scroll-destination="gallery">
-        <div class="container">
-            <h1>{{ trans('menu.gallery') }}</h1>
-            <div class="owl-carousel galleries">
-                @foreach($data['images'] as $document)
-                    <div class="gallery">
-                        <div class="image">
-                            <a class="img-preview" href="{{ asset($document->path) }}"><img src="{{ asset($document->path) }}" /></a>
-                        </div>
-                        {{ $document->name }}
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
+    {{--<a name="gallery"></a>--}}
+    {{--<div class="section gray" data-scroll-destination="gallery">--}}
+        {{--<div class="container">--}}
+            {{--<h1>{{ trans('menu.gallery') }}</h1>--}}
+            {{--<div class="owl-carousel galleries">--}}
+                {{--@foreach($data['images'] as $document)--}}
+                    {{--<div class="gallery">--}}
+                        {{--<div class="image">--}}
+                            {{--<a class="img-preview" href="{{ asset($document->path) }}"><img src="{{ asset($document->path) }}" /></a>--}}
+                        {{--</div>--}}
+                        {{--{{ $document->name }}--}}
+                    {{--</div>--}}
+                {{--@endforeach--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     {{--<a name="prices"></a>--}}
     {{--<a name="works"></a>--}}
@@ -179,7 +179,7 @@
     {{--</div>--}}
 
     <a name="actions"></a>
-    <div class="section" data-scroll-destination="actions">
+    <div class="section gray" data-scroll-destination="actions">
         <div class="container">
             <h1>{{ trans('menu.actions') }}</h1>
             <div class="owl-carousel actions">
@@ -216,7 +216,7 @@
     {{--</div>--}}
 
     <a name="contacts"></a>
-    <div class="section gray" data-scroll-destination="contacts">
+    <div class="section" data-scroll-destination="contacts">
         <div class="container">
             <h1>{{ trans('menu.contacts') }}</h1>
             <h3 class="text-center"><i class="icon-location4"></i> {{ Settings::getSettings()->address }}</h3>
