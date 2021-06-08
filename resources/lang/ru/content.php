@@ -23,7 +23,7 @@ return [
     'thanx_message' => 'Спасибо за Ваше обращение, мы перезвоним Вам в ближайшее время!',
     'callback_request' => 'Запрос на обратный звонок',
     'callback_request_from' => 'Запрос на обратный звонок от пользователя :user_name',
-    'action_request' => 'Запись на акицю «:action_name» от пользователя: :user_name',
+    'action_request' => 'Запись на акцию «:action_name» от пользователя: :user_name',
     'selected_options' => 'Выбранные опции:',
     'phone' => 'Телефон: :phone',
     'unknown_name' => 'имя не указано',
