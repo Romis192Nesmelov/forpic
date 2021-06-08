@@ -12,10 +12,10 @@ class FeedbackController extends Controller
     {
         $this->validate($request, [
             'phone' => 'required|'.$this->validationPhone,
-//            'g-recaptcha-response' => 'required|string',
+            'g-recaptcha-response' => 'required|string',
             'i_agree' => 'required|accepted',
         ]);
-//        if (!$this->reCapchaRequest($request->input('g-recaptcha-response'))) return response()->json(['error' => trans('validation.captcha-error')], 404);
+        if (!$this->reCapchaRequest($request->input('g-recaptcha-response'))) return response()->json(['error' => trans('validation.captcha-error')], 404);
 
         $fields = $this->processingFields($request);
         return $this->sendMail('callback',$fields);
@@ -27,9 +27,10 @@ class FeedbackController extends Controller
             'id' => 'required|integer|exists:actions,id',
             'user_name' => 'max:50',
             'phone' => 'required|'.$this->validationPhone,
-//            'g-recaptcha-response' => 'required|string',
+            'g-recaptcha-response' => 'required|string',
             'i_agree' => 'required|accepted',
         ]);
+        if (!$this->reCapchaRequest($request->input('g-recaptcha-response'))) return response()->json(['error' => trans('validation.captcha-error')], 404);
 
         $fields = $this->processingFields($request);
         $action = Action::find($request->input('id'));
@@ -49,6 +50,7 @@ class FeedbackController extends Controller
     private function sendMail($template,$fields)
     {
         $this->sendMessage($template,$fields);
-        return response()->json(['success' => true, 'message' => trans('content.thanx_message')]);
+//        return response()->json(['success' => true, 'message' => trans('content.thanx_message')]);
+        return redirect()->back()->with('message', trans('content.thanx_message'));
     }
 }

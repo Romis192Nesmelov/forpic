@@ -66,7 +66,7 @@
                     'usingAjax' => true
                 ])
 
-{{--                @include('_re_captcha_block',['usingAjax' => true])--}}
+                @include('_re_captcha_block')
 
                 @include('_checkbox_block',[
                     'addClass' => 'i_agree',
