@@ -16,5 +16,6 @@ use App\Http\Controllers\FeedbackController;
 
 Route::get('/', [StaticController::class,'index']);
 Route::post('/get-action', [StaticController::class,'getAction']);
-Route::post('/callback', [FeedbackController::class,'callback']);
+Route::post('/callback1', [FeedbackController::class,'callback1']);
+Route::post('/callback2', [FeedbackController::class,'callback2']);
 Route::post('/action', [FeedbackController::class,'action']);

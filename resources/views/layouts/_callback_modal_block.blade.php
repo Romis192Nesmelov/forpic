@@ -1,6 +1,6 @@
 @php ob_start(); @endphp
 
-<form class="form-horizontal" action="{{ url('/callback') }}" method="post">
+<form class="form-horizontal" action="{{ url('/callback1') }}" method="post">
     {{ csrf_field() }}
     <div class="modal-body">
         @include('_input_block', [
@@ -32,7 +32,10 @@
             'usingAjax' => true
         ])
 
-        @include('_re_captcha_block',['usingAjax' => true])
+        @include('_re_captcha_block', [
+            'id' => 'captcha2',
+            'usingAjax' => true
+        ])
 
         @include('_checkbox_block',[
             'addClass' => 'i_agree',

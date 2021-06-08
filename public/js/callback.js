@@ -11,70 +11,76 @@ $(document).ready(function ($) {
         unlockSendButton($(this));
     });
 
-    // $('form button[type=submit]').click(function(e) {
-    //     e.preventDefault();
-    //
-    //     var self = $(this),
-    //         form = self.parents('form'),
-    //         textarea = form.find('textarea'),
-    //         select = form.find('select'),
-    //         radio = form.find('input[type=radio]'),
-    //         checkboxes = form.find('input[type=checkbox]'),
-    //         agree = form.find('input[name=i_agree]').is(':checked'),
-    //         fields = {},
-    //         token = form.find('input[name=_token]').val();
-    //
-    //     if (!agree) return false;
-    //
-    //     fields = processingFields(fields,form.find('input'));
-    //     fields = processingFields(fields,select);
-    //     fields = processingFields(fields,textarea);
-    //     fields = processingCheckFields(fields,radio);
-    //     fields = processingCheckFields(fields,checkboxes);
-    //    
-    //     fields['_token'] = token;
-    //     fields['i_agree'] = agree;
-    //
-    //     $('.error').html('');
-    //     var allErrors = $('.form-group.has-feedback.has-error');
-    //     allErrors.removeClass('has-error');
-    //     allErrors.find('.help-block').html('');
-    //
-    //     addLoaderScreen();
-    //
-    //     $.post(form.attr('action'), fields)
-    //         .done(function(data) {
-    //             self.parents('.modal').modal('hide');
-    //             var messageModal = $('#message');
-    //             messageModal.find('h3').html(data.message);
-    //             messageModal.modal('show');
-    //             form.trigger('reset');
-    //             form.find('.btn-primary').attr('disabled','disabled');
-    //             $('span.checked').removeClass('checked');
-    //             window.grecaptcha.reset();
-    //             removeLoaderScreen();
-    //         })
-    //         .fail(function(jqXHR, textStatus, errorThrown) {
-    //             var responseMsg = jQuery.parseJSON(jqXHR.responseText),
-    //                 replaceErr = {
-    //                     'phone':'«Телефон»',
-    //                     'email':'«E-mail»',
-    //                     'user_name':'«Имя»'
-    //                 };
-    //             $.each(responseMsg.errors, function (field, error) {
-    //                 var errorMsg = error[0],
-    //                     errorBlock = $('.input-'+field).parents('.form-group.has-feedback'),
-    //                     errorMessage = errorBlock.find('.help-block');
-    //
-    //                 $.each(replaceErr, function (src,replace) {
-    //                     errorMsg = errorMsg.replace(src,replace);
-    //                 });
-    //                 errorBlock.addClass('has-error');
-    //                 errorMessage.html(errorMsg);
-    //             });
-    //             removeLoaderScreen();
-    //         });
-    // });
+    $('form button[type=submit]').click(function(e) {
+        e.preventDefault();
+
+        var self = $(this),
+            form = self.parents('form'),
+            textarea = form.find('textarea'),
+            select = form.find('select'),
+            radio = form.find('input[type=radio]'),
+            checkboxes = form.find('input[type=checkbox]'),
+            agree = form.find('input[name=i_agree]').is(':checked'),
+            fields = {},
+            token = form.find('input[name=_token]').val();
+
+        if (!agree) return false;
+
+        fields = processingFields(fields,form.find('input'));
+        fields = processingFields(fields,select);
+        fields = processingFields(fields,textarea);
+        fields = processingCheckFields(fields,radio);
+        fields = processingCheckFields(fields,checkboxes);
+
+        fields['_token'] = token;
+        fields['i_agree'] = agree;
+
+        $('.error').html('');
+        var allErrors = $('.form-group.has-feedback.has-error');
+        allErrors.removeClass('has-error');
+        allErrors.find('.help-block').html('');
+
+        addLoaderScreen();
+
+        $.post(form.attr('action'), fields)
+            .done(function(data) {
+                self.parents('.modal').modal('hide');
+                var messageModal = $('#message');
+                messageModal.find('h3').html(data.message);
+                messageModal.modal('show');
+                form.trigger('reset');
+                form.find('.btn-primary').attr('disabled','disabled');
+                $('span.checked').removeClass('checked');
+
+                var captchaCount = 0;
+                $('.g-recaptcha').each(function () {
+                    grecaptcha.reset(captchaCount);
+                    captchaCount++;
+                });
+                
+                removeLoaderScreen();
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                var responseMsg = jQuery.parseJSON(jqXHR.responseText),
+                    replaceErr = {
+                        'phone':'«Телефон»',
+                        'email':'«E-mail»',
+                        'user_name':'«Имя»'
+                    };
+                $.each(responseMsg.errors, function (field, error) {
+                    var errorMsg = error[0],
+                        errorBlock = $('.input-'+field).parents('.form-group.has-feedback'),
+                        errorMessage = errorBlock.find('.help-block');
+
+                    $.each(replaceErr, function (src,replace) {
+                        errorMsg = errorMsg.replace(src,replace);
+                    });
+                    errorBlock.addClass('has-error');
+                    errorMessage.html(errorMsg);
+                });
+                removeLoaderScreen();
+            });
+    });
 });
 
 function processingFields(fields, inputObj) {
@@ -106,3 +112,12 @@ function unlockSendButton(obj) {
     if (checkBox.is(':checked') && phoneInput.val().match(window.phoneRegExp)) button.removeAttr('disabled');
     else button.attr('disabled','disabled');
 }
+
+function reCaptchaCallback() {
+    $('.g-recaptcha').each(function () {
+        var id = $(this).attr('id');
+        grecaptcha.render(id, {
+            'sitekey':window.captchaKey
+        });
+    });
+};

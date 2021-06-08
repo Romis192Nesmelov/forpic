@@ -30,7 +30,10 @@
             'usingAjax' => true
         ])
 
-        @include('_re_captcha_block')
+        @include('_re_captcha_block', [
+            'id' => 'captcha3',
+            'usingAjax' => true
+        ])
 
         @include('_checkbox_block',[
             'addClass' => 'i_agree',

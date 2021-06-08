@@ -1,15 +1,15 @@
 @extends('layouts.main')
 
 @section('content')
-    <div id="video-container" class="section half-height">
-        <video autoplay="autoplay" preload="auto" muted="muted" loop="loop" poster="{{ asset('images/poster.jpg') }}">
-            <source src="{{ asset('video/intro1.mp4') }}" type="video/mp4">
-            <source src="{{ asset('video/intro1.mov') }}" type="video/quicktime">
-            <source src="{{ asset('video/intro1.wmv') }}" type="video/wmv">
-            <source src="{{ asset('video/intro1.m4v') }}" type="video/m4v">
-            <source src="{{ asset('video/intro1.mpeg') }}" type="video/mpeg">
-        </video>
-    </div>
+    {{--<div id="video-container" class="section half-height">--}}
+        {{--<video autoplay="autoplay" preload="auto" muted="muted" loop="loop" poster="{{ asset('images/poster.jpg') }}">--}}
+            {{--<source src="{{ asset('video/intro1.mp4') }}" type="video/mp4">--}}
+            {{--<source src="{{ asset('video/intro1.mov') }}" type="video/quicktime">--}}
+            {{--<source src="{{ asset('video/intro1.wmv') }}" type="video/wmv">--}}
+            {{--<source src="{{ asset('video/intro1.m4v') }}" type="video/m4v">--}}
+            {{--<source src="{{ asset('video/intro1.mpeg') }}" type="video/mpeg">--}}
+        {{--</video>--}}
+    {{--</div>--}}
 
     {{--<a name="calculator"></a>--}}
     {{--<div class="section" data-scroll-destination="calculator">--}}
@@ -56,7 +56,7 @@
     <div class="section">
         <div class="container">
             <h1>{{ trans('content.callback_me') }}</h1>
-            <form class="form-horizontal text-center" action="{{ url('/callback') }}" method="post">
+            <form class="form-horizontal text-center" action="{{ url('/callback2') }}" method="post">
                 {{ csrf_field() }}
                 @include('_input_block', [
                     'name' => 'phone',
@@ -66,7 +66,12 @@
                     'usingAjax' => true
                 ])
 
-                @include('_re_captcha_block')
+                @include('_re_captcha_block', [
+                    'id' => 'captcha1',
+                    'usingAjax' => true
+                ])
+
+                {{--<div id="captcha1" class="g-recaptcha"></div>--}}
 
                 @include('_checkbox_block',[
                     'addClass' => 'i_agree',
@@ -227,6 +232,7 @@
     <div class="half-height" id="map"></div>
     <script>
         window.address = "{{ Settings::getSettings()->address }}";
+        window.captchaKey = "{{ env('RE_CAPTCHA_KEY') }}";
     </script>
 
     <a name="driving"></a>
