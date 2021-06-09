@@ -20,7 +20,7 @@ class FeedbackController extends Controller
         if (!$this->reCapchaRequest($request->input('g-recaptcha-response'))) return response()->json(['error' => trans('validation.captcha-error')], 404);
 
         $fields = $this->processingFields($request);
-        return $this->sendMail('callback1',$fields);
+        return $this->sendMail($request,'callback1',$fields);
     }
     
     public function callback2(Request $request)
@@ -33,7 +33,7 @@ class FeedbackController extends Controller
         if (!$this->reCapchaRequest($request->input('g-recaptcha-response'))) return response()->json(['error' => trans('validation.captcha-error')], 404);
 
         $fields = $this->processingFields($request);
-        return $this->sendMail('callback2',$fields);
+        return $this->sendMail($request,'callback2',$fields);
     }
 
     public function action(Request $request)
@@ -59,13 +59,15 @@ class FeedbackController extends Controller
                 }
             }
         }
-        return $this->sendMail('action',$fields);
+        return $this->sendMail($request,'action',$fields);
     }
 
-    private function sendMail($template,$fields)
+    private function sendMail(Request $request, $template, $fields)
     {
         $this->sendMessage($template,$fields);
-        return response()->json(['success' => true, 'message' => trans('content.thanx_message')]);
-//        return redirect()->back()->with('message', trans('content.thanx_message'));
+        $message = trans('content.thanx_message');
+        return $request->ajax()
+            ? response()->json(['success' => true, 'message' => $message])
+            : redirect()->back()->with('message', $message);
     }
 }
